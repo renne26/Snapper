@@ -10,6 +10,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame  # import after disabling environ prompt
 import tkinter as tk
 from keras_Model import ten
+from Genshincheck import move
 
 if __name__=='__main__': 
     root = tk.Tk()  # create only one instance for Tk()
@@ -48,35 +49,18 @@ if __name__=='__main__':
     is_hunt = False
     on_screen = False
     is_bite = 1
+    once = 1
     def scan_for_turtle():
         global is_hunt
         screenshot = ImageGrab.grab()
         screenshot.save('e.png')
         result = int(ten())
-        print("AFTER REVIEWING YOUR IMAGE RESULT:{}".format(result))
-        if result:
+        #print("AFTER REVIEWING YOUR IMAGE RESULT:{}".format(result))
+        if result and once:
             is_hunt = True
+            move()
         os.remove("e.png") 
         return is_hunt
-
-    def add():
-        #global x,is_cool
-        time.sleep(0.001)
-        if (x == 1500):
-            is_cool = False
-        elif (x < 0):
-            is_cool = True
-        if not(is_cool):
-            x -= vel
-        else:
-            x += vel
-        scan_for_turtle() # idk where to put this function D:
-        #  #shows the turtle on screen
-        # screen.blit(animatino[walkCount], (x,y))
-        # if walkCount == 0:
-        #     walkCount +=1
-        # else:
-        #     walkCount = 0
 
     def ishunt(is_hunt):
         global x,y,on_screen,is_bite

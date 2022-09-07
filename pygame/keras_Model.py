@@ -1,3 +1,7 @@
+from cgitb import reset
+from unittest import result
+
+
 def ten():
     import tensorflow as tf
     import numpy as np
@@ -8,7 +12,7 @@ def ten():
     #print(interpreter.get_signature_list())
 
     img1 = tf.keras.utils.load_img(
-        "pygame\\a.png", target_size=(192, 144)
+        "pygame\\g.png", target_size=(192, 144)
     )
     img1_array = tf.keras.utils.img_to_array(img1)
 
@@ -33,7 +37,11 @@ def ten():
     #score_lite = tf.nn.softmax(predictions_lite)
     #assert np.allclose(predictions, predictions_lite)
     print("save me please{}".format(predictions_lite[0][0]))
-    result = np.clip(predictions_lite[0][0],None,0.5)
-    result /= 0.5
+    #result = np.clip(predictions_lite[0][0],None,0.5)
+    #result /= 0.5
+    if (predictions_lite[0][0]) > 0:
+        result = 1
+    else:
+        result = 0
     return(result)
 #print("Label is {}".format(result))
