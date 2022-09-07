@@ -1,3 +1,7 @@
 # Snapper
 Snappie the Turtle
-<img src = 'https://i.kym-cdn.com/photos/images/facebook/001/583/322/1f3.png'/>
+# How to Use
+Step 1: Download program  
+Step 2: Run Installer  
+Step 3: Enjoy Snappie   
+
