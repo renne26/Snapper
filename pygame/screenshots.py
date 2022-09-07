@@ -10,18 +10,19 @@ import os
 pygame.init()
 screen = pygame.display.set_mode((800, 600),pygame.NOFRAME) # For borderless, use pygame.NOFRAME
 
+done = False
+fuchsia = (255, 0, 128)  # Transparency color
+dark_red = (5, 0, 128)
+
 # Create layered window
-hwnd = pygame.display.get_wm_info()["window"]
+hwnd = pygame.dispalay.get_wm_info()["window"]
 win32gui.SetWindowLong(hwnd, win32con.GWL_EXSTYLE,
                        win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE) | win32con.WS_EX_LAYERED)
 # Set window transparency color
 win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*fuchsia), 0, win32con.LWA_COLORKEY)
 
 #INITIAL VARIABLES
-done = False
-fuchsia = (255, 0, 128)  # Transparency color
-dark_red = (5, 0, 128)
-animatino = [pygame.image.load('T.png'), pygame.image.load('T_eat.png')]
+animatino = [pygame.image.load('pygame\T_eat.png'), pygame.image.load('pygame\T_eat.png')]
 clock = pygame.time.Clock()
 #t_end is for how long the code will run
 t_end = time.time() + 60 * 0.5
