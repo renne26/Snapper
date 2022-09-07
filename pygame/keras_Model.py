@@ -8,7 +8,7 @@ def ten():
     #print(interpreter.get_signature_list())
 
     img1 = tf.keras.utils.load_img(
-        "pygame\\g.png", target_size=(192, 144)
+        "pygame\\a.png", target_size=(192, 144)
     )
     img1_array = tf.keras.utils.img_to_array(img1)
 
